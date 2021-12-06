@@ -48,3 +48,6 @@ while True:
             print("it's a tie!!")
     if question1 == "quit" or question1 == "stop" or question1 == "q":
         break
+      
+    else:
+     print("invalid input.")  
