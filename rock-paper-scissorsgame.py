@@ -6,48 +6,49 @@ print('''
   `8bd8'  `8bd8'   88,    ,88 88
     YP      YP     `"8bbdP"Y8 88
     ''')
-moveset = ["rock", "paper" , "scissors" , "r", "p", "s"]
-
+usermoveset = ["rock","paper","scissors","r","p","s"]
+moveset = ["rock","paper","scissors"]
 while True:
     print("inputs can be either the full word or just the first letter.")
     question1 = input("are you going to be using rock, paper, or scissors? type quit or stop when you want to quit.").lower()
+
+    if question1 == "quit" or question1 == "stop":
+            break
+
     if question1 == "rock" or question1 == "r":
         computer_choice = random.choice(moveset)
-        if computer_choice == "rock":
+        if computer_choice == "rock" or computer_choice == "r":
             print("the computer choose:" + computer_choice)
             print("It's a draw.")
-        elif computer_choice == "paper":
+        elif computer_choice == "paper" or computer_choice == "p":
             print("the computer choose:" + computer_choice)
             print("you lose!")
-        elif computer_choice == "scissors":
+        elif computer_choice == "scissors" or computer_choice == "s":
             print("the computer choose:" + computer_choice)
             print("you win!")
 
-    if question1 == "paper" or question1 == "p":
+    elif question1 == "paper" or question1 == "p":
         computer_choice = random.choice(moveset)
-        if computer_choice == "rock":
+        if computer_choice == "rock" or computer_choice == "r":
             print("the computer choose:" + computer_choice)
             print("you win!")
-        elif computer_choice == "paper":
+        elif computer_choice == "paper" or computer_choice == "p":
             print("the computer choose:" + computer_choice)
             print("It's a tie!")
-        elif computer_choice == "scissors":
+        elif computer_choice == "scissors" or computer_choice == "s":
             print("the computer choose:" + computer_choice)
             print("you lose!")
 
-    if question1 == "scissors" or question1 == "s":
+    elif question1 == "scissors" or question1 == "s":
         computer_choice = random.choice(moveset)
-        if computer_choice == "rock":
+        if computer_choice == "rock" or computer_choice == "r":
             print("the computer choose:" + computer_choice)
             print("you lose!")
-        elif computer_choice == "paper":
+        elif computer_choice == "paper" or computer_choice == "p":
             print("the computer choose:" + computer_choice)
             print("You win!")
-        elif computer_choice == "scissors":
+        elif computer_choice == "scissors" or computer_choice == "s":
             print("the computer choose:" + computer_choice)
             print("it's a tie!!")
-    if question1 == "quit" or question1 == "stop" or question1 == "q":
-        break
-      
     else:
-     print("invalid input.")  
+        print("invalid input.")
