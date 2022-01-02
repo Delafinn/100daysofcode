@@ -32,6 +32,9 @@ def end_game():
     elif sum_of_dealerscards == 21:
         print("dealer wins!")
 
+    elif sum_of_dealerscards == sum_of_userscards:
+        print("it's a draw!")
+
     elif sum_of_userscards == 21 and sum_of_dealerscards == 21:
         print("you win!")
 
@@ -96,7 +99,10 @@ while True: # a while loop for the users portion to hit or stand
 
 print("dealers turn!")
 while True:
-    if sum_of_dealerscards < sum_of_userscards and sum_of_dealerscards < 21:
+    if sum_of_dealerscards == sum_of_userscards or sum_of_dealerscards == 20:
+        end_game()
+        break
+    elif sum_of_dealerscards < sum_of_userscards and sum_of_dealerscards < 21:
         dealers_card3 = random.choice(deck)
         print(f"the dealer pulled a new card  it was a {dealers_card3}")
         dealers_cards.append(dealers_card3)
