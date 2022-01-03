@@ -77,9 +77,10 @@ while True: # a while loop for the users portion to hit or stand
     hit_or_stand = input("would you like to hit or stand?").lower() # asking the user if they want to hit or stand
     if hit_or_stand == "quit":  # this is a quit option mainly used for debugging but can be used in game.
         sys.exit()
-    elif hit_or_stand == "hit": #
-        users_card3 = random.choice(deck)
-        print(f"the card was {users_card3}")
+    elif hit_or_stand == "hit": # getting another card
+        users_card3 = random.choice(deck) # pulling a random card from the deck
+        print(f"the card was {users_card3}") # telling the user what their card is
+        print(f"{users_cards}") # printing the cards out to the player
         users_cards.append(users_card3)
         sum_of_userscards = sum(users_cards)
         if users_card3 == 11 and sum_of_userscards > 21:
@@ -120,3 +121,4 @@ while True:
     elif sum_of_dealerscards > sum_of_userscards:
         end_game()
         break
+        
