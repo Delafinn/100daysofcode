@@ -1,3 +1,3 @@
 # 100daysofcode
 100 projects in 100days based on the udemy python course
-This is solely intended for educational uses. 
+Please feel welcome to reachout and let me know how to improve any of the projects!
