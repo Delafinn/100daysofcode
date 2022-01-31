@@ -68,12 +68,3 @@ while GAME_IS_ON:
 scr.exitonclick()
 
 
-
-
-
-
-# day 2 detect collison with food
-# create and track score
-# when the game should end.
-# end1- snake collides with wall
-# end2 - snake hits itself
