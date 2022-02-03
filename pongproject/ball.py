@@ -7,14 +7,15 @@ class Ball(Turtle):
 
     def __init__(self,):
         super().__init__()
+        MOVE_NUMS = [-4,-3,-2,2,3,4]
         self.color("white")
         self.shape("square")
         self.penup()
         self.clear()
         self.goto(0, 0)
         self.speed("slowest")
-        self.ymove = random.randint(-3,3)
-        self.xmove = random.randint(-3,3)
+        self.ymove = random.choice(MOVE_NUMS)
+        self.xmove = random.choice(MOVE_NUMS)
         self.shapesize(stretch_wid = 1, stretch_len = 1)
 
     def move(self):
