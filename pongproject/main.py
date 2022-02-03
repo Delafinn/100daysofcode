@@ -45,9 +45,8 @@ while RUN_PROGRAM is True:
         time.sleep(1)
         ball.update()
         scorer.increase_score()
-    elif RIGHT_PADDLE.ycor() > 340:
+    elif scorer.score == 5 or scorel.score ==5:
         RUN_PROGRAM = False
 
-
-
+scorer.game_over()
 screen.exitonclick()
