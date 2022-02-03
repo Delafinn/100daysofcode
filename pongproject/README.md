@@ -4,7 +4,7 @@
 
 3. `CD` over to the folder containg the .py files and run  `python main.py` or run `python3 main.py` depending on your computer.
 
-**Currently there is no way to end the game which i am still working on. 
+4.**Currently there is no way to end the game which i am still working on. 
 
 I will get update out sometime this week.**
 
