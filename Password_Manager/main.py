@@ -1,3 +1,4 @@
+''' a password manager app'''
 from tkinter import *
 from tkinter import messagebox
 import random
@@ -14,6 +15,7 @@ fulllist = letters + numbers + capletters
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def generate_password():
+    '''Generating a password'''
     global fulllist
 
     password_entry.delete(0,END)
@@ -29,6 +31,7 @@ def generate_password():
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save_password():
+    '''saving the entries made and writing the data to a .txt file'''
     saved_website = website_entry.get()
     saved_emailusername = email_entry.get()
     saved_password = password_entry.get()
@@ -42,7 +45,7 @@ def save_password():
 
         if is_ok:
 
-            with open(f"saved_passwords.txt", mode = "a") as file:
+            with open("saved_passwords.txt", mode = "a") as file:
                 file.write(f" \n {saved_website} , {saved_emailusername} , {saved_password} ")
             website_entry.delete(0,END)
             email_entry.delete(0,END)
@@ -91,10 +94,7 @@ add_button.grid(column = 1, row = 6,columnspan = 2)
 generate_password = Button(text = "Generate password",width = 32,command = generate_password)
 generate_password.grid(column = 2, row = 5)
 
-
 exit = Button(text="exit", command=window.destroy)
 exit.grid(column = 3, row = 7)
-
-
 
 window.mainloop()
