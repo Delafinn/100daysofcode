@@ -9,23 +9,9 @@ PASSWORD1 = "yourpassword here"
 
 # pulling the date time for now
 now = dt.datetime.now()
-year = now.year
-month = now.month
-day = now.day
 weekday = now.weekday()
-print(year)
-print(month)
-print(day)
 print(weekday)
 print(now)
-
-#creating a date time from scratch
-date_of_birth = dt.datetime(year = 12, month =12 , day =12, hour = 4)
-print(date_of_birth)
-
-
-
-
 
 with open("quotes.txt") as data:
     data_lines = data.readlines()
