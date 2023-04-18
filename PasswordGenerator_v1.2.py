@@ -1,37 +1,34 @@
-#Password Generator Project
 import random
-import sys
 
-letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
- 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ]
-capletters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
- 'M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-symbols = ['!', '$', '%', '&','*', '+']
+class PasswordGenerator:
+    def __init__(self):
+        self.letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ]
+        self.capletters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+        self.numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+        self.symbols = ['!', '$', '%', '&','*', '+']
+        self.fulllist = self.letters + self.numbers + self.symbols + self.capletters
 
-full_list = letters + numbers + symbols + capletters
+    def generate_password(self, n_characters):
+        passwordlist = []
+        for i in range(n_characters):
+            passwordlist.append(random.choice(self.fulllist))
+        random.shuffle(passwordlist)
+        password = ""
+        for item in passwordlist:
+            password += item
+        return password
 
-#lists above contain characters used in passwords
+def main():
+    print("Welcome to quick password generator")
+    password_generator = PasswordGenerator()
+    while True:
+        proceed_question = input("Would you like to generate a password?? ").lower()
+        if proceed_question in ("no", "n", ""):
+            break
+        elif proceed_question in ( "yes", "y"):
+            n_characters = int(input("How many characters would you like in your password? Please enter a number: "))
+            password = password_generator.generate_password(n_characters)
+            print(f"Generated password: {password}")
 
-
-print("Welcome to quick password generator")
-RUN_PROGRAM = True
-
-while RUN_PROGRAM is True:
-    proceed_question = input("would you like to proceed?").lower()
-    if proceed_question == "no" or proceed_question == "n":
-        sys.exit()
-
-    elif proceed_question == "yes" or proceed_question == "y":
-        n_characters = int(input("How many characters would you like in your password? Please enter a number."))
-        passwordlist = []  #starting with en empty list
-        for i in range(0, n_characters):
-            passwordlist.append(random.choice(full_list)) #adding to the empty passwordlist randomly from full_list
-        random.shuffle(passwordlist) #shuffling the passwordlist
-        password = "" #now we make an empty string
-        # we are making a string so the generated password is readable to the human eyes. and not in a list separated by commas.
-
-        for items in passwordlist: # from i or items in passwordlist
-            password += items # add i or items to the string password
-
-        print(password) #print password
+if __name__ == "__main__":
+    main()
