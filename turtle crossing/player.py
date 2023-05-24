@@ -33,6 +33,7 @@ class Player(Turtle):
         new_xcor = self.xcor() - MOVE_DISTANCE
         self.goto(new_xcor, self.ycor())
 
+
     def round_end(self):
         if self.ycor() > FINISH_LINE_Y:
             self.goto(STARTING_POSITION)
