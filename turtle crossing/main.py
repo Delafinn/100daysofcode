@@ -17,10 +17,9 @@ car_manager = CarManager()
 scoreboard = Scoreboard((-270,270))
 
 screen.colormode(255)
-
 screen.onkeypress(fun = player1.go_up, key = "Up")
-screen.onkeypress(fun = player1.go_left, key = "Left")
 screen.onkeypress(fun = player1.go_right, key = "Right")
+screen.onkeypress(fun = player1.go_left, key = "Left")
 
 GAME_IS_ON = True
 while GAME_IS_ON:
@@ -43,3 +42,4 @@ while GAME_IS_ON:
 
 
 screen.exitonclick()
+
